@@ -21,14 +21,10 @@ if __name__ == "__main__":
 
     ## Setup initial Values in the planner
     sim = False
-    # goal = np.array([(np.pi/2 + np.pi/6)*100.])
-    goal = np.array([(np.pi/2 + 0.873)*100.])
-    # goal = np.array([(np.pi/2)*100.])
-
-
+    goal = np.array([20.]) ## Full Close
 
     if sim:
-        x = np.array([-19.63318241])
+        x = np.array([-19.6])
         mu = np.array([-19.6])
         planner = planner_interface(goal, sim, x, mu)
     else:
@@ -39,7 +35,7 @@ if __name__ == "__main__":
 
     max_threshold = 2.
     max_final_error = 2.
-    replanning_threshld = 10.
+    replanning_threshld = 50.
     planner.planner.nSegments = 5
     planner.planner.dyna.goal_threshold = max_threshold
 
@@ -53,14 +49,21 @@ if __name__ == "__main__":
     
     mu_plan, s_plan, u_plan = planner.generate_plan()
 
-    rospy.sleep(3)
+    # z = planner.get_observation()
 
-    goal2 = np.array([(np.pi/2)*100.])
+    # if(abs(goal[0] - z[0])) > 0.1:
+    #     print "Observation = ", z
+    #     planner.update_belief(z)
+    #     planner.update_stored_values()
+    #     mu_plan, s_plan, u_plan = planner.generate_plan()
 
-    planner = planner_interface(goal2, sim)
-    mu_plan, s_plan, u_plan = planner.generate_plan()
+    planner.gripper.open()
 
-    
+
+    # rospy.sleep(2)
+    # goal2 = np.array([5.])
+    # planner2 = planner_interface(goal2, sim)
+    # mu_plan, s_plan, u_plan = planner2.generate_plan()
 
     # while((max(abs(mu - goal)) > max_final_error)):
 

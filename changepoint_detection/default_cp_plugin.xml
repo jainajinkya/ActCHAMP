@@ -1,0 +1,34 @@
+<class_libraries>
+  <library path="libArticulationFitter">
+    <class name="changepoint_detection/ArticulationFitter" type="changepoint_detection::ArticulationFitter" base_class_type="changepoint_detection::ModelFitter">
+      <description>
+        Models rigid, prismatic, and revolute articulated motion
+      </description>
+    </class>
+  </library>
+  <library path="libGauss1DFitter">
+    <class name="changepoint_detection/Gauss1DFitter" type="changepoint_detection::Gauss1DFitter" base_class_type="changepoint_detection::ModelFitter">
+      <description>
+        Models Gaussian mean and vairance in 1D
+      </description>
+    </class>
+  </library>
+</class_libraries> 
+
+<!--<class_libraries>
+  <library path="lib/libArticulationFitter">
+    <class name="changepoint_detection/ArticulationFitter" type="changepoint_detection::ArticulationFitter" base_class_type="changepoint_detection::ModelFitter">
+      <description>
+        Models rigid, prismatic, and revolute articulated motion
+      </description>
+    </class>
+  </library>
+  <library path="lib/libGauss1DFitter">
+    <class name="changepoint_detection/Gauss1DFitter" type="changepoint_detection::Gauss1DFitter" base_class_type="changepoint_detection::ModelFitter">
+      <description>
+        Models Gaussian mean and vairance in 1D
+      </description>
+    </class>
+  </library>
+</class_libraries>
+

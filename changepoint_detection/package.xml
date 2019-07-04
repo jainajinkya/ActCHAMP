@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<package>
+  <name>changepoint_detection</name>
+  <version>0.0.0</version>
+  <description>changepoint_detection</description>
+  <author>Scott Niekum</author>
+  <maintainer email="jainajinkya@gmail.com">Ajinkya Jain</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/changepoint_detection</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>eigen</build_depend>
+  <!-- <build_depend>libgsl</build_depend> -->
+  <!-- <build_depend>atlas</build_depend> -->
+  <build_depend> pluginlib </build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>boost</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>articulation_msgs</build_depend>
+  <!-- <build_depend>articulation_models</build_depend> -->
+  <build_depend>rosbag</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>eigen</run_depend>
+  <run_depend> pluginlib </run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>boost</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>articulation_msgs</run_depend>
+  <run_depend>rosbag</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <!-- <run_depend>articulation_models</run_depend> -->
+  
+  <export>
+    <changepoint_detection plugin="${prefix}/default_cp_plugin.xml" 
+    />
+  </export>
+
+  
+</package>
+
+

@@ -21,15 +21,17 @@ if __name__ == "__main__":
 
     ## Setup initial Values in the planner
     sim = False
-    # goal = np.array([(np.pi/2 + np.pi/6)*100.])
-    goal = np.array([(np.pi/2 + 0.873)*100.])
-    # goal = np.array([(np.pi/2)*100.])
+    # goal = np.array([80., 0., 60., 0.])
+    # goal = np.array([72.1, -2.8, -19.7, 78.])
+    # goal = np.array([0.721, -0.028, -0.197, 0.78])
+    # goal = np.array([0.721, -0.028, 1.0, 0.78])
+    goal = np.array([0.85, 0.35, 0.45, 0.])*100.
 
-
+    # goal = np.array([0.721, -0.028, -0.197, 2.57])
 
     if sim:
-        x = np.array([-19.63318241])
-        mu = np.array([-19.6])
+        x = np.array([81., -14., 30., 157.])
+        mu = np.array([81., -14., 30., 157.])
         planner = planner_interface(goal, sim, x, mu)
     else:
         planner = planner_interface(goal, sim)
@@ -37,30 +39,29 @@ if __name__ == "__main__":
     mu = copy.copy(planner.mu_actual)
     x = copy.copy(planner.x_actual)
 
-    max_threshold = 2.
-    max_final_error = 2.
-    replanning_threshld = 10.
-    planner.planner.nSegments = 5
+    max_threshold = 0.02
+    max_final_error = 10.
+    replanning_threshld = 50.
+    planner.planner.nSegments = 4
+    planner.t = 16
     planner.planner.dyna.goal_threshold = max_threshold
 
     ## Data Collection for Post-Processing and Plots
     traj = [planner.mu_actual]
     traj_true = [planner.x_actual]
-    cov_traj = [planner.cov_actual[planner.planner.opt.id1]]
+    cov_traj = [planner.cov_actual[planner.id1]]
     ds_traj = [planner.wts_actual]
 
-    rospy.sleep(3)
+    # rospy.sleep(3)
     
     mu_plan, s_plan, u_plan = planner.generate_plan()
 
-    rospy.sleep(3)
+    print "Planned Path: \n", np.round(mu_plan, 3)
 
-    goal2 = np.array([(np.pi/2)*100.])
-
-    planner = planner_interface(goal2, sim)
-    mu_plan, s_plan, u_plan = planner.generate_plan()
-
-    
+    # rospy.sleep(2)
+    # goal2 = np.array([5.])
+    # planner2 = planner_interface(goal2, sim)
+    # mu_plan, s_plan, u_plan = planner2.generate_plan()
 
     # while((max(abs(mu - goal)) > max_final_error)):
 
@@ -117,4 +118,4 @@ if __name__ == "__main__":
     # raw_input('Press enter to close')
 
     print "REACHED GOAL. TASK COMPLETED!"
-    rospy.spin()
+    # rospy.spin()

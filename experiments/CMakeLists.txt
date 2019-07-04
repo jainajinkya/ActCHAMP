@@ -13,14 +13,19 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   cmake_modules
   message_generation
-  # hlpr_perception_msgs
   visualization_msgs
+  sensor_msgs
+  moveit_msgs
+  moveit_core
+  moveit_ros_planning
+  moveit_ros_planning_interface
 )
   
 find_package(Eigen3 REQUIRED)
 #message("Eigen Lib path=${EIGEN3_INCLUDE_DIRS}")
+find_package(Boost REQUIRED system filesystem date_time thread)
 
-# catkin_python_setup()
+catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -104,8 +109,7 @@ add_service_files(
 catkin_package(
  INCLUDE_DIRS include
 #  LIBRARIES experiments
-   CATKIN_DEPENDS ar_track_alvar_msgs std_msgs geometry_msgs roscpp rospy tf message_runtime #hlpr_perception_msgs 
-   visualization_msgs
+   CATKIN_DEPENDS ar_track_alvar_msgs std_msgs geometry_msgs roscpp rospy tf message_runtime moveit_core moveit_ros_planning_interface visualization_msgs
 	DEPENDS EIGEN3
 )
 
@@ -121,6 +125,12 @@ include_directories(
   	${EIGEN3_INCLUDE_DIRS}
     ${changepoint_INCLUDE_DIRS}
 )
+
+include_directories(SYSTEM ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
+
+## moveit Based arm shaowing
+add_executable(shadow_arm src/shadow_arm.cpp)
+target_link_libraries(shadow_arm ${catkin_LIBRARIES})
 
 add_executable(target_frame_broadcaster src/target_frame_broadcaster.cpp)
 target_link_libraries(target_frame_broadcaster ${catkin_LIBRARIES})

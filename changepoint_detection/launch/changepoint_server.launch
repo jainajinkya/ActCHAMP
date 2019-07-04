@@ -1,0 +1,4 @@
+<launch>
+	<node name="changepoint_detection_server" pkg="changepoint_detection" type="changepoint_detection_server" 
+	respawn="false" output="screen"/>
+</launch>

@@ -2,7 +2,7 @@
 
 import numpy as np
 import copy
-from planner_interface_2 import planner_interface
+from planner_interface import planner_interface
 
 if __name__ == "__main__":
     ## Setup initial Values in the planner

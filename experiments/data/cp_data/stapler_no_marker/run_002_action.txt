@@ -1,0 +1,37 @@
+Run 1 
+==========
+Model: rotational
+Length: 64
+Start: 0
+End: 63
+   rot_radius:0.0686542749145
+   rot_center.x:0.0121403006456
+   rot_center.y:0.0261500738555
+   rot_center.z:0.0512282586394
+   rot_axis.x:0.64425182449
+   rot_axis.y:0.401984035056
+   rot_axis.z:0.600870664662
+   rot_axis.w:0.249605421717
+   rot_orientation.x:-0.227954646765
+   rot_orientation.y:-0.725355867401
+   rot_orientation.z:0.0413001833897
+   rot_orientation.w:0.648220517646
+   log_likelihood:292.389713038
+   model_evidence:26.2630618881
+Model: rigid
+Length: 78
+Start: 64
+End: 141
+   rigid_position.x:-0.00197623278099
+   rigid_position.y:0.0441209277568
+   rigid_position.z:-0.0133973652646
+   rigid_orientation.x:0.0363729895986
+   rigid_orientation.y:-0.0284550002117
+   rigid_orientation.z:0.260320176572
+   rigid_orientation.w:0.964417297781
+   log_likelihood:303.071663955
+   model_evidence:303.071663955
+
+=========================================
+
+

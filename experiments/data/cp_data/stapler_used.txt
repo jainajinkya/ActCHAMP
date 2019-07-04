@@ -1,0 +1,24 @@
+Run 1 
+==========
+Model: rotational
+Length: 106
+Start: 0
+End: 105
+   rot_radius:0.159481678132
+   rot_center.x:-0.00871861854139
+   rot_center.y:-0.0534231338416
+   rot_center.z:-0.0398761807929
+   rot_axis.x:-0.180676832179
+   rot_axis.y:0.0925251049042
+   rot_axis.z:-0.469474299622
+   rot_axis.w:0.859295565723
+   rot_orientation.x:0.0598678482701
+   rot_orientation.y:0.0895542359024
+   rot_orientation.z:0.824675300704
+   rot_orientation.w:0.555253570888
+   log_likelihood:-9421.96077798
+   model_evidence:-2285.00541069
+
+=========================================
+
+

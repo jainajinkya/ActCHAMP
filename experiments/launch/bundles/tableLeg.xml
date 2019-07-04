@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<multimarker markers="12"> 
+    <marker index="200" status="1">
+        <corner x="-2.25" y="-2.25" z="0.0" />
+        <corner x="2.25" y="-2.25" z="0.0" />
+        <corner x="2.25" y="2.25" z="0.0" />
+        <corner x="-2.25" y="2.25" z="0.0" />
+    </marker>
+    <marker index="4" status="1">
+        <corner x="2.5" y="-2.25" z="-12.4" />
+        <corner x="2.5" y="2.25" z="-12.4" />
+        <corner x="2.5" y="2.25" z="-7.9" />
+        <corner x="2.5" y="-2.25" z="-7.9" />
+    </marker>
+    <marker index="12" status="1">
+        <corner x="2.25" y="2.5" z="-12.4" />
+        <corner x="-2.25" y="2.5" z="-12.4" />
+        <corner x="-2.25" y="2.5" z="-7.9" />
+        <corner x="2.25" y="2.5" z="-7.9" />
+    </marker>
+    <marker index="1" status="1">
+        <corner x="-2.5" y="2.25" z="-12.4" />
+        <corner x="-2.5" y="-2.25" z="-12.4" />
+        <corner x="-2.5" y="-2.25" z="-7.9" />
+        <corner x="-2.5" y="2.25" z="-7.9" />
+    </marker>
+    <marker index="2" status="1">
+        <corner x="-2.25" y="-2.5" z="-12.4" />
+        <corner x="2.25" y="-2.5" z="-12.4" />
+        <corner x="2.25" y="-2.5" z="-7.9" />
+        <corner x="-2.25" y="-2.5" z="-7.9" />
+    </marker>
+    <marker index="6" status="1">
+        <corner x="2.5" y="-2.25" z="-21.7" />
+        <corner x="2.5" y="2.25" z="-21.7" />
+        <corner x="2.5" y="2.25" z="-17.2" />
+        <corner x="2.5" y="-2.25" z="-17.2" />
+    </marker>
+    <marker index="9" status="1">
+        <corner x="2.25" y="2.5" z="-21.7" />
+        <corner x="-2.25" y="2.5" z="-21.7" />
+        <corner x="-2.25" y="2.5" z="-17.2" />
+        <corner x="2.25" y="2.5" z="-17.2" />
+    </marker>
+<!--     <marker index="0" status="1">
+        <corner x="-2.5" y="2.25" z="-21.7" />
+        <corner x="-2.5" y="-2.25" z="-21.7" />
+        <corner x="-2.5" y="-2.25" z="-17.2" />
+        <corner x="-2.5" y="2.25" z="-17.2" />
+    </marker>   -->                     
+    <marker index="5" status="1">
+        <corner x="-2.25" y="-2.5" z="-21.7" />        
+        <corner x="2.25" y="-2.5" z="-21.7" />
+        <corner x="2.25" y="-2.5" z="-17.2" />
+        <corner x="-2.25" y="-2.5" z="-17.2" />
+    </marker>
+
+    <marker index="7" status="1">
+        <corner x="2.5" y="-2.25" z="-31.2" />
+        <corner x="2.5" y="2.25" z="-31.2" />
+        <corner x="2.5" y="2.25" z="-26.7" />
+        <corner x="2.5" y="-2.25" z="-26.7" />
+    </marker>
+    <marker index="11" status="1">
+        <corner x="2.25" y="2.5" z="-31.2" />
+        <corner x="-2.25" y="2.5" z="-31.2" />
+        <corner x="-2.25" y="2.5" z="-26.7" />
+        <corner x="2.25" y="2.5" z="-26.7" />
+    </marker>
+    <marker index="3" status="1">
+        <corner x="-2.5" y="2.25" z="-31.2" />
+        <corner x="-2.5" y="-2.25" z="-31.2" />
+        <corner x="-2.5" y="-2.25" z="-26.7" />
+        <corner x="-2.5" y="2.25" z="-26.7" />
+    </marker>
+    <marker index="8" status="1">
+        <corner x="-2.25" y="-2.5" z="-30.7" />
+        <corner x="2.25" y="-2.5" z="-30.7" />
+        <corner x="2.25" y="-2.5" z="-26.7" />
+        <corner x="-2.25" y="-2.5" z="-26.7" />
+    </marker>
+</multimarker>

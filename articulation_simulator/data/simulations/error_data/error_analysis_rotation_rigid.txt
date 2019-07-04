@@ -1,0 +1,145 @@
+###################################
+Difference with Ground Truth for Dataset: 1
+###################################
+Segments in Data 1:2
+Segments in Data 2:7
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+###################################
+Difference with Ground Truth for Dataset: 2
+###################################
+Segments in Data 1:2
+Segments in Data 2:8
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+----------------------------------------
+Model in test data: prismatic
+Detection mismatch. Couldn't find a matching model in Ground Truth 
+
+###################################
+Difference in Two Approaches 
+###################################
+For 0-th Model: 
+log_likelihood for Data 1: -620307.254222
+log_likelihood for Data 2: -707762.101641
+Differences in log_likelihood: 87454.8474188
+
+Model Evidence for Data 1: -620330.280073
+Model Evidence for Data 2: -620334.341697
+Differences in Model evidences: 4.06162354257
+
+----------------------------------------
+For 1-th Model: 
+log_likelihood for Data 1: -614837.516118
+log_likelihood for Data 2: -661568.672009
+Differences in log_likelihood: 46731.1558916
+
+Model Evidence for Data 1: -614860.541969
+Model Evidence for Data 2: -614858.001148
+Differences in Model evidences: -2.54082054982
+
+----------------------------------------
+For 2-th Model: 
+log_likelihood for Data 1: -613315.17411
+log_likelihood for Data 2: -822759.260356
+Differences in log_likelihood: 209444.086246
+
+Model Evidence for Data 1: -613338.199961
+Model Evidence for Data 2: -611929.202216
+Differences in Model evidences: -1408.99774466
+
+----------------------------------------
+For 3-th Model: 
+log_likelihood for Data 1: -320757.351894
+log_likelihood for Data 2: -693814.969333
+Differences in log_likelihood: 373057.617439
+
+Model Evidence for Data 1: -320780.377745
+Model Evidence for Data 2: -350201.407806
+Differences in Model evidences: 29421.0300607
+
+----------------------------------------
+For 4-th Model: 
+log_likelihood for Data 1: -258.918965598
+log_likelihood for Data 2: -542840.815615
+Differences in log_likelihood: 542581.896649
+
+Model Evidence for Data 1: -352.220691883
+Model Evidence for Data 2: -105.617875078
+Differences in Model evidences: -246.602816805
+
+----------------------------------------
+For 5-th Model: 
+log_likelihood for Data 1: 74.6778364522
+log_likelihood for Data 2: -1349754.48898
+Differences in log_likelihood: 1349829.16681
+
+Model Evidence for Data 1: 30.3164168964
+Model Evidence for Data 2: -134.34686215
+Differences in Model evidences: 164.663279047
+
+----------------------------------------
+For 6-th Model: 
+log_likelihood for Data 1: 21.0079363728
+log_likelihood for Data 2: -1803079.85428
+Differences in log_likelihood: 1803100.86222
+
+Model Evidence for Data 1: -27.1566904762
+Model Evidence for Data 2: -54.9843367463
+Differences in Model evidences: 27.8276462701
+
+----------------------------------------

@@ -1,0 +1,11 @@
+DataPoint[] data
+string model_type
+CPParams cp_params
+bool actions_available
+DataPoint[] actions
+---
+ModelSegment[] segments
+
+
+
+

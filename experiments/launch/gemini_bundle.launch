@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="marker_size" default="4.5" />
+    <arg name="max_new_marker_error" default="0.08" />
+    <arg name="max_track_error" default="0.0" />
+
+    <arg name="cam_image_topic" default="/kinect/qhd/points" />
+    <arg name="cam_info_topic" default="/kinect/qhd/camera_info" />
+
+    <arg name="output_frame" default="/linear_actuator_link" />
+    <arg name="med_filt_size" default="10" />
+    <arg name="bundle_files" default="$(find experiments)/launch/bundles/tableLeg.xml" />
+
+    <node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundles" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg med_filt_size) $(arg bundle_files)" />
+
+	<!-- Table face Detector  -->
+	<arg name="marker_size_2" default="7.2" />
+	<arg name="bundle_files_2" default="$(find experiments)/launch/bundles/ikea_table_face.xml" />
+    <node name="ar_track_alvar_2" pkg="ar_track_alvar" type="findMarkerBundles" respawn="false" output="screen" args="$(arg marker_size_2) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg med_filt_size) $(arg bundle_files_2)" />
+</launch>

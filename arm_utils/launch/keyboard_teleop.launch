@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="keyboard_teleop" pkg="arm_utils" type="keyboard_eef_controller.py" output="screen"/>
+</launch>

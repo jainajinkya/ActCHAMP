@@ -1,0 +1,110 @@
+Microwave Data
+file: mw_run_101
+
+Parameteres in articulation.cpp:
+double sigma_position = 0.01; 
+double sigma_orientation = 1.4;      
+double optimizer_iterations = 0;
+double sac_iterations = 50;
+double prior_outlier_ratio = log(0.01) / (- 0.05);
+
+
+Parameters in the request:
+req.cp_params.len_mean = 200.0
+req.cp_params.len_sigma = 5.0
+req.cp_params.min_seg_len = 10
+req.cp_params.max_particles = 10
+req.cp_params.resamp_particles = 10
+
+ActChamp:
+Model: rotational    Length: 224
+Start: 0
+End: 223
+   rot_radius : 0.343504889394
+   rot_center.x : -0.198780161548
+   rot_center.y : -0.121258603598
+   rot_center.z : -0.0466523146368
+   rot_axis.x : 0.682840933519
+   rot_axis.y : -0.199253439314
+   rot_axis.z : 0.673344256916
+   rot_axis.w : 0.201578367172
+   rot_orientation.x : -0.62158210888
+   rot_orientation.y : -0.329672911015
+   rot_orientation.z : -0.328365047559
+   rot_orientation.w : 0.630180806757
+   log_likelihood : 243.977312459
+   model_evidence : -810.97179686
+
+
+## RUN 2
+start: 0   model: rotational   len: 224
+Rotational Model:
+    radius: 0.285857
+    center.x: -0.217882
+    center.y: -0.030754
+    center.z: -0.060847
+    axis.x: 0.215386
+    axis.y: 0.676842
+    axis.z: -0.341517
+    axis.w: 0.615515
+    orientation.x: -0.657505
+    orientation.y: -0.212742
+    orientation.z: -0.276883
+    orientation.w: 0.667655
+Log Likelihood: 183.279138
+Model Evidence: -843.843020
+
+
+## Run 3
+start: 0   model: rotational   len: 224
+Rotational Model:
+    radius: 0.367125
+    center.x: -0.166867
+    center.y: -0.165613
+    center.z: -0.041522
+    axis.x: -0.193297
+    axis.y: -0.653066
+    axis.z: -0.110104
+    axis.w: 0.723891
+    orientation.x: 0.578312
+    orientation.y: 0.296295
+    orientation.z: -0.412348
+    orientation.w: 0.638540
+Log Likelihood: 288.049828
+Model Evidence: -817.409507
+
+## Run 4
+start: 0   model: rotational   len: 224
+Rotational Model:
+    radius: 0.445251
+    center.x: -0.137869
+    center.y: -0.261090
+    center.z: -0.043679
+    axis.x: 0.734118
+    axis.y: -0.023810
+    axis.z: 0.656832
+    axis.w: 0.170513
+    orientation.x: -0.602159
+    orientation.y: -0.426477
+    orientation.z: -0.393012
+    orientation.w: 0.548693
+Log Likelihood: 300.301410
+Model Evidence: -821.250662
+
+
+## Run 5
+Rotational Model:
+    radius: 0.343744
+    center.x: -0.217038
+    center.y: -0.112152
+    center.z: -0.047928
+    axis.x: -0.292860
+    axis.y: -0.639938
+    axis.z: -0.148490
+    axis.w: 0.694740
+    orientation.x: 0.612293
+    orientation.y: 0.181621
+    orientation.z: -0.354693
+    orientation.w: 0.682865
+Log Likelihood: 225.067299
+Model Evidence: -816.806384

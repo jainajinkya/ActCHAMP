@@ -1,0 +1,4 @@
+<launch>
+    <node name="articModel_tester" pkg="changepoint" type="test_articulation" 
+    respawn="false" output="screen"/>
+</launch>

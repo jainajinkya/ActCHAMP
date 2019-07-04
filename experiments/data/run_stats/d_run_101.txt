@@ -1,0 +1,14 @@
+start: 0   model: prismatic   len: 168
+Prismatic Model:
+    prismatic_dir.x: -0.006390
+    prismatic_dir.y: -0.026860
+    prismatic_dir.z: -0.999619
+    position.x: 0.091469
+    position.y: -0.345916
+    position.z: 0.223719
+    orientation.x: -0.000579
+    orientation.y: 0.003192
+    orientation.z: -0.032140
+    orientation.w: 0.999478
+Log Likelihood: 199.270564
+Model Evidence: -605.910231

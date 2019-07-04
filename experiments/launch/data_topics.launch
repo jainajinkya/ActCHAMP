@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="ar_tags" default="0"/>    
+
+    <group if="$(arg ar_tags)">
+        <include file="$(find experiments)/launch/gemini_individual_marker.launch"/>
+        <!-- <include file="$(find experiments)/launch/gemini_bundle.launch"/> -->
+    </group>
+
+    <group unless="$(arg ar_tags)">
+        <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1.205 0.12 -0.068 0 0 0 1 linear_actuator_link object_frame" />
+    </group>
+
+
+    <node name="pose_data_publisher"  pkg="experiments" type="pose_data_publisher" args="chips_can bender" output="screen">
+        
+        <!--DRAWER -->
+        <!--
+        <param name="reference_object" value="chips_can" />
+        <param name="moving_object" value="drawer" /> -->
+
+        <!-- STAPLER -->
+        <param name="reference_object" value="stapler_lower_arm" />
+        <param name="moving_object" value="stapler_upper_arm" />
+    </node>
+    
+    <node name="target_frame_broadcaster"  pkg="experiments" type="target_frame_broadcaster" output="screen" />
+    <node name="action_data_publisher"  pkg="experiments" type="action_data_publisher_shadow" output="screen" />
+
+    <node name="feedback_publisher"  pkg="pomdp_hd" type="feedback_publisher" output="screen" />
+
+     <include file="$(find experiments)/launch/tf_broadcaster.launch"/> -->
+    <!-- <node name="action_data_publisher"  pkg="experiments" type="action_data_publisher_teleop" output="screen" /> -->
+
+    <!-- rosbag recording to record the demonstration data -->
+    <!-- rosbag record -O ~/ajinkya_ws/src/active_champ/experiments/data/bagfiles/articTest_test1.bag /changepoint/pose_data /changepoint/action_data -->
+
+</launch>

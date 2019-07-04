@@ -1,0 +1,228 @@
+Run 1 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.0483754971437
+   prismatic_dir.y:-0.136326385388
+   prismatic_dir.z:0.989482151392
+   rigid_position.x:-0.112814231239
+   rigid_position.y:0.354693046059
+   rigid_position.z:-0.230954036298
+   rigid_orientation.x:-0.027478924014
+   rigid_orientation.y:-0.0182405817375
+   rigid_orientation.z:0.000534488547379
+   rigid_orientation.w:0.999455804043
+   log_likelihood:-6799.75672062
+   model_evidence:-2321.81220727
+
+=========================================
+
+
+Run 2 
+==========
+Model: rotational
+Length: 159
+Start: 0
+End: 158
+   rot_radius:0.180778007549
+   rot_center.x:-0.0514197422823
+   rot_center.y:0.185704235061
+   rot_center.z:-0.155635273584
+   rot_axis.x:0.126712751194
+   rot_axis.y:-0.734078398856
+   rot_axis.z:0.131121661391
+   rot_axis.w:0.654125288406
+   rot_orientation.x:-0.56471245164
+   rot_orientation.y:-0.530692010719
+   rot_orientation.z:0.596351585065
+   rot_orientation.w:-0.20935764546
+   log_likelihood:-6581.6593468
+   model_evidence:-1941.17031688
+
+=========================================
+
+
+Run 3 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.00642488144638
+   prismatic_dir.y:-0.178802534012
+   prismatic_dir.z:0.983864002151
+   rigid_position.x:-0.117076387631
+   rigid_position.y:0.362137978095
+   rigid_position.z:-0.227281922185
+   rigid_orientation.x:-0.0223279050673
+   rigid_orientation.y:0.0354349635654
+   rigid_orientation.z:-0.0108611167913
+   rigid_orientation.w:0.999063493555
+   log_likelihood:-6520.48952543
+   model_evidence:-2731.49011901
+
+=========================================
+
+
+Run 4 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.0348167844798
+   prismatic_dir.y:-0.064971916902
+   prismatic_dir.z:0.997279520261
+   rigid_position.x:-0.11326353043
+   rigid_position.y:0.352290797913
+   rigid_position.z:-0.231538870096
+   rigid_orientation.x:-0.00398414279892
+   rigid_orientation.y:0.0426538174185
+   rigid_orientation.z:-0.0027801327325
+   rigid_orientation.w:0.999078099714
+   log_likelihood:-6773.54099111
+   model_evidence:-2167.34334983
+
+=========================================
+
+
+Run 5 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.0254468270489
+   prismatic_dir.y:-0.0798099420385
+   prismatic_dir.z:0.996485239301
+   rigid_position.x:-0.114369248039
+   rigid_position.y:0.348018303677
+   rigid_position.z:-0.231350521912
+   rigid_orientation.x:-0.0319025061388
+   rigid_orientation.y:-0.01688283516
+   rigid_orientation.z:0.000993241572927
+   rigid_orientation.w:0.999347894104
+   log_likelihood:-7033.05984568
+   model_evidence:-2742.08630223
+
+=========================================
+
+
+Run 6 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.0318924235213
+   prismatic_dir.y:-0.108673443021
+   prismatic_dir.z:0.993565778448
+   rigid_position.x:-0.112284254392
+   rigid_position.y:0.357509037378
+   rigid_position.z:-0.230323021197
+   rigid_orientation.x:-0.0583531018308
+   rigid_orientation.y:0.0243218672194
+   rigid_orientation.z:-0.0230994685778
+   rigid_orientation.w:0.997732317224
+   log_likelihood:-6769.53514677
+   model_evidence:-2268.91139859
+
+=========================================
+
+
+Run 7 
+==========
+Model: rotational
+Length: 159
+Start: 0
+End: 158
+   rot_radius:0.100456700206
+   rot_center.x:-0.0944089737429
+   rot_center.y:0.264050392928
+   rot_center.z:-0.14943083992
+   rot_axis.x:0.734807962389
+   rot_axis.y:0.0517394149426
+   rot_axis.z:-0.66228712542
+   rot_axis.w:0.13695274679
+   rot_orientation.x:0.387670036885
+   rot_orientation.y:0.624069450934
+   rot_orientation.z:-0.510037295848
+   rot_orientation.w:0.447337925686
+   log_likelihood:-7016.6402423
+   model_evidence:-2540.38962672
+
+=========================================
+
+
+Run 8 
+==========
+Model: prismatic
+Length: 159
+Start: 0
+End: 158
+   prismatic_dir.x:-0.0334550098302
+   prismatic_dir.y:-0.117888452917
+   prismatic_dir.z:0.992463135329
+   rigid_position.x:-0.113222143543
+   rigid_position.y:0.35402293174
+   rigid_position.z:-0.230679676205
+   rigid_orientation.x:-0.0111236656654
+   rigid_orientation.y:-0.0443431277861
+   rigid_orientation.z:-0.0291001618425
+   rigid_orientation.w:0.998530486095
+   log_likelihood:-6723.73280062
+   model_evidence:-2239.80069211
+
+=========================================
+
+
+Run 9 
+==========
+Model: rotational
+Length: 159
+Start: 0
+End: 158
+   rot_radius:0.141518886993
+   rot_center.x:-0.149210431284
+   rot_center.y:0.213963369869
+   rot_center.z:-0.163990691358
+   rot_axis.x:0.709733137747
+   rot_axis.y:-0.0948524492886
+   rot_axis.z:-0.695369349876
+   rot_axis.w:-0.0611829494276
+   rot_orientation.x:0.472495892533
+   rot_orientation.y:0.520063335732
+   rot_orientation.z:-0.359205138144
+   rot_orientation.w:0.614209595414
+   log_likelihood:-6513.72809919
+   model_evidence:-2220.0076956
+
+=========================================
+
+
+Run 10 
+==========
+Model: rotational
+Length: 159
+Start: 0
+End: 158
+   rot_radius:0.307292739718
+   rot_center.x:0.0277858710767
+   rot_center.y:0.0831880369385
+   rot_center.z:-0.173624148557
+   rot_axis.x:0.21640689033
+   rot_axis.y:-0.684914362471
+   rot_axis.z:0.142489262839
+   rot_axis.w:0.680997198139
+   rot_orientation.x:-0.399316193117
+   rot_orientation.y:-0.575298523702
+   rot_orientation.z:0.63615810802
+   rot_orientation.w:-0.323853436204
+   log_likelihood:-6413.83761167
+   model_evidence:-2355.45493408
+
+=========================================
+
+

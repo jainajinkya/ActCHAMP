@@ -1,0 +1,92 @@
+Run 1 
+==========
+Model: prismatic
+Length: 50
+Start: 0
+End: 49
+   prismatic_dir.x:-0.0931260652131
+   prismatic_dir.y:0.274186965412
+   prismatic_dir.z:0.957156749951
+   rigid_position.x:-0.117263481389
+   rigid_position.y:0.339067857635
+   rigid_position.z:-0.218041517865
+   rigid_orientation.x:0.00388260854334
+   rigid_orientation.y:0.0820532552863
+   rigid_orientation.z:-0.0264283037878
+   rigid_orientation.w:0.996269909917
+   log_likelihood:-916.575243516
+   model_evidence:-1112.17639379
+Model: prismatic
+Length: 52
+Start: 50
+End: 101
+   prismatic_dir.x:0.209310918944
+   prismatic_dir.y:0.0354236568117
+   prismatic_dir.z:0.977207298248
+   rigid_position.x:-0.11675397372
+   rigid_position.y:0.350460402152
+   rigid_position.z:-0.15456791531
+   rigid_orientation.x:0.0632373018172
+   rigid_orientation.y:0.0478838200725
+   rigid_orientation.z:-0.0324618943616
+   rigid_orientation.w:0.996320434824
+   log_likelihood:-2018.6713126
+   model_evidence:-2224.13598596
+Model: prismatic
+Length: 58
+Start: 102
+End: 159
+   prismatic_dir.x:-0.262671231571
+   prismatic_dir.y:-0.102535296347
+   prismatic_dir.z:0.959421876501
+   rigid_position.x:-0.0964906813983
+   rigid_position.y:0.342465835025
+   rigid_position.z:-0.103267235338
+   rigid_orientation.x:0.0140862619189
+   rigid_orientation.y:0.0660242332416
+   rigid_orientation.z:-0.0454247474738
+   rigid_orientation.w:0.996683987113
+   log_likelihood:-851.067773375
+   model_evidence:-1086.57346799
+
+=========================================
+
+
+Run 2 
+==========
+Model: prismatic
+Length: 95
+Start: 0
+End: 94
+   prismatic_dir.x:0.2072134937
+   prismatic_dir.y:0.0867817652881
+   prismatic_dir.z:0.974439065946
+   rigid_position.x:-0.123625356715
+   rigid_position.y:0.347124560554
+   rigid_position.z:-0.220466980506
+   rigid_orientation.x:0.0421381320916
+   rigid_orientation.y:0.0625682028432
+   rigid_orientation.z:-0.0270318698082
+   rigid_orientation.w:0.996784267448
+   log_likelihood:-2561.70791903
+   model_evidence:-2994.32622373
+Model: prismatic
+Length: 65
+Start: 95
+End: 159
+   prismatic_dir.x:-0.242542002457
+   prismatic_dir.y:-0.0839119173102
+   prismatic_dir.z:0.966505130445
+   rigid_position.x:-0.0991133382017
+   rigid_position.y:0.341723898461
+   rigid_position.z:-0.0920727883209
+   rigid_orientation.x:0.00582882239883
+   rigid_orientation.y:0.103243655397
+   rigid_orientation.z:-0.0176913060987
+   rigid_orientation.w:0.994481669081
+   log_likelihood:-1158.78574715
+   model_evidence:-1430.12091969
+
+=========================================
+
+

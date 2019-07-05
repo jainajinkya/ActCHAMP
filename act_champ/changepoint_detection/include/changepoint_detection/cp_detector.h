@@ -42,7 +42,7 @@
 #define CP_DETECTOR_H_
 
 #include "ros/ros.h"
-#include "changepoint_detection/Detectchangepoint_detections.h"
+#include "changepoint_detection/DetectChangepoints.h"
 #include <math.h>
 #include <iostream>
 #include <fstream>

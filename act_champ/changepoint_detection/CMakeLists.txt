@@ -44,7 +44,7 @@ add_message_files(
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES
-  Detectchangepoint_detections.srv
+  DetectChangepoints.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -100,9 +100,9 @@ add_executable(test_articulation test/test_articulation_models.cpp)
 target_link_libraries(test_articulation ArticulationFitter ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(test_articulation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
 
-add_executable(demo_quality_analysis test/demo_quality_analysis.cpp)
-target_link_libraries(demo_quality_analysis ArticulationFitter ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-add_dependencies(demo_quality_analysis ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
+#add_executable(demo_quality_analysis test/demo_quality_analysis.cpp)
+#target_link_libraries(demo_quality_analysis ArticulationFitter ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+#add_dependencies(demo_quality_analysis ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
 
 ## TESTS
 add_executable(test_visualization test/test_cp_visual.cpp )

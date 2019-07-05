@@ -1,0 +1,38 @@
+Run 1 
+==========
+Model: prismatic
+Length: 77
+Start: 0
+End: 76
+   prismatic_dir.x:0.133252242775
+   prismatic_dir.y:0.280779875138
+   prismatic_dir.z:0.950476986314
+   rigid_position.x:-0.123222717772
+   rigid_position.y:0.337480997487
+   rigid_position.z:-0.219078073774
+   rigid_orientation.x:0.0861335784275
+   rigid_orientation.y:0.0751877929773
+   rigid_orientation.z:-0.00981442170889
+   rigid_orientation.w:0.993393919642
+   log_likelihood:-1779.35518119
+   model_evidence:-2113.82819867
+Model: prismatic
+Length: 83
+Start: 77
+End: 159
+   prismatic_dir.x:-0.189151234187
+   prismatic_dir.y:-0.216799450896
+   prismatic_dir.z:0.957715933196
+   rigid_position.x:-0.104335291085
+   rigid_position.y:0.351642075862
+   rigid_position.z:-0.0874236089746
+   rigid_orientation.x:0.0632373018172
+   rigid_orientation.y:0.0478838200725
+   rigid_orientation.z:-0.0324618943616
+   rigid_orientation.w:0.996320434824
+   log_likelihood:-2167.87038571
+   model_evidence:-2534.63415616
+
+=========================================
+
+

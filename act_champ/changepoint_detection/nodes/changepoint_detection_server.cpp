@@ -40,13 +40,13 @@
 
 #include <ros/ros.h>
 #include "changepoint_detection/cp_detector.h"
-#include "changepoint_detection/Detectchangepoint_detections.h"
+#include "changepoint_detection/DetectChangepoints.h"
 
 using namespace std;
 using namespace changepoint_detection;
 
-bool detectCallback(Detectchangepoint_detections::Request &req,
-                    Detectchangepoint_detections::Response &res )
+bool detectCallback(DetectChangepoints::Request &req,
+                    DetectChangepoints::Response &res )
 {
     printf("\nReceived request of size: %i\n", req.data.size());
 

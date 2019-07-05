@@ -1,0 +1,50 @@
+Run 1 
+==========
+Model: rigid
+Length: 50
+Start: 0
+End: 49
+   rigid_position.x:-0.021693108307
+   rigid_position.y:-0.00644823226848
+   rigid_position.z:-0.228794082203
+   rigid_orientation.x:0.488061473937
+   rigid_orientation.y:0.785081498473
+   rigid_orientation.z:-0.342595747446
+   rigid_orientation.w:0.167544597782
+   log_likelihood:181.32151938
+   model_evidence:181.32151938
+Model: rotational
+Length: 50
+Start: 50
+End: 99
+   rot_radius:0.238120936572
+   rot_center.x:0.0782819742772
+   rot_center.y:-0.158548704
+   rot_center.z:-0.0764310581628
+   rot_axis.x:0.860151992132
+   rot_axis.y:0.335542552931
+   rot_axis.z:-0.156854098623
+   rot_axis.w:0.350637330227
+   rot_orientation.x:0.0153742078893
+   rot_orientation.y:0.0142289318662
+   rot_orientation.z:-0.0445910881289
+   rot_orientation.w:0.998785665741
+   log_likelihood:-6703.72843077
+   model_evidence:-144.777915614
+Model: rigid
+Length: 50
+Start: 100
+End: 149
+   rigid_position.x:-0.108243864263
+   rigid_position.y:-0.0488838276118
+   rigid_position.z:-0.176845000564
+   rigid_orientation.x:0.278905243707
+   rigid_orientation.y:0.882559720319
+   rigid_orientation.z:-0.370709927793
+   rigid_orientation.w:0.0766443379447
+   log_likelihood:232.682285884
+   model_evidence:232.682285884
+
+=========================================
+
+

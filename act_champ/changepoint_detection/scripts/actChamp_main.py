@@ -91,24 +91,19 @@ def qv_mult(q1, v1):
       
 def makeDetectRequest(req):
     try:
-        dc = rospy.ServiceProxy('changepoint_detection/detect_changepoint_detections', Detectchangepoint_detections)  
+        dc = rospy.ServiceProxy('changepoint_detection/detect_changepoint_detections', DetectChangepoints)  
         resp = dc(req)
         return resp
     except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
-
-        
+        print "Service call failed: %s"%e 
         
         
 if __name__ == '__main__':
-    rospy.init_node('changepoint_detection_test')
+    rospy.init_node('ActCHAMP_detection_test')
     
     #Load data - we want the relative difference between 2 object poses
     #m1 and m2 are the trajectories of obj1 and obj2 alone
     #traj1 is obj1-obj2, traj2 is obj2-obj1.  Notice a significant difference. 
-    # f = open('data/artic_data.txt', 'r')    
-    # [m1, m2, traj1, traj2] = pickle.load(f)
-    # traj = traj2
 
     f_name = '../../experiments/data/pkl_files/' + str(sys.argv[1]) + '.pkl'
     f = open(f_name, 'r')
@@ -117,69 +112,40 @@ if __name__ == '__main__':
     t_name = "../../experiments/data/cp_data/"+str(sys.argv[1]) + "_action.txt"
     test_file = open(t_name, 'w')  
 
-    draw = True
+    draw = False
+
+    print "sys args :", sys.argv[2]
 
     for i in range(1):
-        req = Detectchangepoint_detectionsRequest()
+        req = DetectChangepointsRequest()
         req.actions_available = True
         req.data = [DataPoint(x) for x in traj]
         req.actions = [DataPoint(act) for act in actions]
         req.model_type = 'changepoint_detection/ArticulationFitter'
-        
-        ## Static
-        # req.cp_params.len_mean = 50.0
-        # req.cp_params.len_sigma = 10. #5.0
-        # req.cp_params.min_seg_len = 10 #3
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
-        
-        ### Microwave
-        # req.cp_params.len_mean = 200.0
-        # req.cp_params.len_sigma = 10. #5.0
-        # req.cp_params.min_seg_len = 10 #3
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
 
-        # # ## Microwave no_grip
-        # req.cp_params.len_mean = 100.0
-        # req.cp_params.len_sigma = 10. #5.0
-        # req.cp_params.min_seg_len = 70 #3
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
+        # Microwave
+        if int(sys.argv[2])==1:
+            req.cp_params.len_mean = 120.0
+            req.cp_params.len_sigma = 10. #5.0
+            req.cp_params.min_seg_len = 80 #3
+            req.cp_params.max_particles = 10
+            req.cp_params.resamp_particles = 10
         
-        # # ## Drawer
-        # req.cp_params.len_mean = 300.0
-        # req.cp_params.len_sigma = 10.0
-        # req.cp_params.min_seg_len = 150
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
+        if int(sys.argv[2]) == 2: 
+            ## Drawer
+            req.cp_params.len_mean = 150.0
+            req.cp_params.len_sigma = 10.0
+            req.cp_params.min_seg_len = 80
+            req.cp_params.max_particles = 10
+            req.cp_params.resamp_particles = 10
         
-
-        # ## Stapler
-        # req.cp_params.len_mean = 150.0
-        # req.cp_params.len_sigma = 5. #5.0
-        # req.cp_params.min_seg_len = 70 #3
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
-
-        ## microwave no marker
-        # req.cp_params.len_mean = 50.0
-        # req.cp_params.len_sigma = 10. #5.0
-        # req.cp_params.min_seg_len = 50 #3
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
-        # req.cp_params.len_mean = 50.0
-        # req.cp_params.len_sigma = 10.0
-        # req.cp_params.min_seg_len = 50
-        # req.cp_params.max_particles = 10
-        # req.cp_params.resamp_particles = 10
-        
-        ## Stapler
-        req.cp_params.len_mean = 50.0
-        req.cp_params.len_sigma = 10.0
-        req.cp_params.min_seg_len = 50.
-        req.cp_params.max_particles = 10
-        req.cp_params.resamp_particles = 10
+        else:
+            ## Stapler
+            req.cp_params.len_mean = 50.0
+            req.cp_params.len_sigma = 10.0
+            req.cp_params.min_seg_len = 50.
+            req.cp_params.max_particles = 10
+            req.cp_params.resamp_particles = 10
 
         resp = makeDetectRequest(req)
         

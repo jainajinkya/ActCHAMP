@@ -130,14 +130,14 @@ if __name__ == '__main__':
         else:
             data_file = "example_data/stapler"
 
-    f_name = '../../experiments/data/pkl_files/' + data_file + '.pkl'
-    f = open(f_name, 'r')
-    [traj, actions] = pickle.load(f)
+        f_name = '../../experiments/data/pkl_files/' + data_file + '.pkl'
+        f = open(f_name, 'r')
+        [traj, actions] = pickle.load(f)
+        f.close()
 
-    t_name = "../../experiments/data/cp_data/"+ data_file + "_action.txt"
-    test_file = open(t_name, 'w')  
+        t_name = "../../experiments/data/cp_data/"+ data_file + "_action.txt"
+        test_file = open(t_name, 'w')  
 
-    for i in range(1):
         req = DetectChangepointsRequest()
         req.actions_available = True
         req.data = [DataPoint(x) for x in traj]
@@ -148,7 +148,7 @@ if __name__ == '__main__':
         if args.dataset in [1,2]:
             req.cp_params.len_mean = 120.0
             req.cp_params.len_sigma = 10. #5.0
-            req.cp_params.min_seg_len = 80 #3
+            req.cp_params.min_seg_len = 50 #3
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
         
@@ -176,11 +176,11 @@ if __name__ == '__main__':
             req.cp_params.resamp_particles = 10
 
         resp = makeDetectRequest(req)
-        
+            
         log_likelihoods = []
         model_evidences = []
 
-        test_file.write("Run "+ str(i+1) + " \n==========\n")
+        test_file.write("Run "+ str(1) + " \n==========\n")
 
         for seg in resp.segments:
             print "Model:", seg.model_name, "   Length:", seg.last_point - seg.first_point + 1
@@ -204,82 +204,82 @@ if __name__ == '__main__':
 
         test_file.write("\n=========================================\n\n\n")
 
-    test_file.close()
-    print "Wrote data for microwave data with action test file."
+        test_file.close()
+        print "Wrote changpoint data in " + t_name
 
     
-    # ########### Drawing code ###########
-    if args.draw == 1:
-        X = np.array([traj[i][0] for i in xrange(len(traj))])
-        Y = np.array([traj[i][1] for i in xrange(len(traj))])
-        Z = np.array([traj[i][2] for i in xrange(len(traj))])
-        
-        fig = plt.figure()
-        ax = fig.gca(projection='3d')
-        ax.set_aspect('equal')
+        # ########### Drawing code ###########
+        if args.draw == 1:
+            X = np.array([traj[i][0] for i in xrange(len(traj))])
+            Y = np.array([traj[i][1] for i in xrange(len(traj))])
+            Z = np.array([traj[i][2] for i in xrange(len(traj))])
             
-        colors = []
-        choices = ['red','green','blue','purple','yellow','black']
-        i = 0
-        for seg in resp.segments:
-            colors += [choices[i]] * (seg.last_point - seg.first_point + 1) 
+            fig = plt.figure(i)
+            ax = fig.gca(projection='3d')
+            ax.set_aspect('equal')
+                
+            colors = []
+            choices = ['red','green','blue','purple','yellow','black']
+            i = 0
+            for seg in resp.segments:
+                colors += [choices[i]] * (seg.last_point - seg.first_point + 1) 
+                
+                params = seg.model_params
+                if(seg.model_name == "rotational"):
+                    p = Circle((0,0), params[0], facecolor = 'None', edgecolor = choices[i], alpha = .6)
+                    ax.add_patch(p)
+                    
+                    q = (params[7], params[4], params[5], params[6])
+                    v = (0,0,1) # The default normal of a circle that we want to rotate by q
+                    qv = qv_mult(q,v)
+                    
+                    pathpatch_2d_to_3d(p, z=0, normal = qv)
+                    pathpatch_translate(p, (params[1], params[2], params[3]))
+                    
+                if(seg.model_name == "prismatic"):
+                    llen = 1
+                    sx = params[0]
+                    sy = params[1]
+                    sz = params[2]
+                    px = params[3]  
+                    py = params[4]
+                    pz = params[5]  
+                    lx = [px-(sx*llen),px+(sx*llen)]
+                    ly = [py-(sy*llen),py+(sy*llen)]
+                    lz = [pz-(sz*llen),pz+(sz*llen)]
+                    ax.plot(lx,ly,lz, color=choices[i], alpha=0.6)
+                    
+                if(seg.model_name == "rigid"):
+                    rx = params[0]
+                    ry = params[1]
+                    rz = params[2]
+                    # rad = 0.0075 * 3 #3-sigma
+                    rad = 0.005 * 3 
+
+                    
+                    phi = np.linspace(0, 2 * np.pi, 100)
+                    theta = np.linspace(0, np.pi, 100)
+                    xm = rad * np.outer(np.cos(phi), np.sin(theta)) + rx
+                    ym = rad * np.outer(np.sin(phi), np.sin(theta)) + ry
+                    zm = rad * np.outer(np.ones(np.size(phi)), np.cos(theta)) + rz
+                    ax.plot_surface(xm, ym, zm, color=choices[i], alpha=0.4, linewidth=0)
+                                    
+                i = (i+1) % len(choices)
+        
+            #Create equal aspect ratio that is just large enough for all points
+            ax.scatter(X,Y,Z, c=colors)
+            max_range = max(X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min())
+            X_buffer = (max_range - (X.max()-X.min())) / 2.0
+            Y_buffer = (max_range - (Y.max()-Y.min())) / 2.0
+            Z_buffer = (max_range - (Z.max()-Z.min())) / 2.0
+            ax.auto_scale_xyz([X.min()-X_buffer, X.max()+X_buffer], [Y.min()-Y_buffer, Y.max()+Y_buffer], [Z.min()-Z_buffer, Z.max()+Z_buffer])
             
-            params = seg.model_params
-            if(seg.model_name == "rotational"):
-                p = Circle((0,0), params[0], facecolor = 'None', edgecolor = choices[i], alpha = .6)
-                ax.add_patch(p)
-                
-                q = (params[7], params[4], params[5], params[6])
-                v = (0,0,1) # The default normal of a circle that we want to rotate by q
-                qv = qv_mult(q,v)
-                
-                pathpatch_2d_to_3d(p, z=0, normal = qv)
-                pathpatch_translate(p, (params[1], params[2], params[3]))
-                
-            if(seg.model_name == "prismatic"):
-                llen = 1
-                sx = params[0]
-                sy = params[1]
-                sz = params[2]
-                px = params[3]  
-                py = params[4]
-                pz = params[5]  
-                lx = [px-(sx*llen),px+(sx*llen)]
-                ly = [py-(sy*llen),py+(sy*llen)]
-                lz = [pz-(sz*llen),pz+(sz*llen)]
-                ax.plot(lx,ly,lz, color=choices[i], alpha=0.6)
-                
-            if(seg.model_name == "rigid"):
-                rx = params[0]
-                ry = params[1]
-                rz = params[2]
-                # rad = 0.0075 * 3 #3-sigma
-                rad = 0.005 * 3 
+            # Hide grid lines
+            ax.grid(False)
 
-                
-                phi = np.linspace(0, 2 * np.pi, 100)
-                theta = np.linspace(0, np.pi, 100)
-                xm = rad * np.outer(np.cos(phi), np.sin(theta)) + rx
-                ym = rad * np.outer(np.sin(phi), np.sin(theta)) + ry
-                zm = rad * np.outer(np.ones(np.size(phi)), np.cos(theta)) + rz
-                ax.plot_surface(xm, ym, zm, color=choices[i], alpha=0.4, linewidth=0)
-                                
-            i = (i+1) % len(choices)
-        
-        #Create equal aspect ratio that is just large enough for all points
-        ax.scatter(X,Y,Z, c=colors)
-        max_range = max(X.max()-X.min(), Y.max()-Y.min(), Z.max()-Z.min())
-        X_buffer = (max_range - (X.max()-X.min())) / 2.0
-        Y_buffer = (max_range - (Y.max()-Y.min())) / 2.0
-        Z_buffer = (max_range - (Z.max()-Z.min())) / 2.0
-        ax.auto_scale_xyz([X.min()-X_buffer, X.max()+X_buffer], [Y.min()-Y_buffer, Y.max()+Y_buffer], [Z.min()-Z_buffer, Z.max()+Z_buffer])
-        
-        # Hide grid lines
-        ax.grid(False)
-
-        ax.set_xticklabels([])
-        ax.set_yticklabels([])
-        ax.set_zticklabels([])
-        
-        plt.show()    
+            ax.set_xticklabels([])
+            ax.set_yticklabels([])
+            ax.set_zticklabels([])
+            
+            plt.show()    
 

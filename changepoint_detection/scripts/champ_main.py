@@ -142,7 +142,7 @@ if __name__ == '__main__':
         req.model_type = 'changepoint_detection/ArticulationFitter'
 
         print "##############################################"
-        print "Testing dataset: " + data_file - "example_data/"
+        print "Testing dataset: " + data_file
 
         if i == 1:
             req.cp_params.len_mean = 200.0

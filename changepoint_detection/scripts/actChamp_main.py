@@ -145,7 +145,7 @@ if __name__ == '__main__':
         req.model_type = 'changepoint_detection/ArticulationFitter'
 
         print "##############################################"
-        print "Testing dataset: " + data_file - "example_data/"
+        print "Testing dataset: " + data_file
 
         # Microwave
         if i == 1:

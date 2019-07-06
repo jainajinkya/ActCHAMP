@@ -3,7 +3,7 @@ Package to use the ActCHAMP algorithm for data collection, changepoint analysis,
 
 ## Run Examples
 ### Changepoint Detection
-- Run changepoint server ```roslaunch changepoint_detection changepoint_detection_server.launch ```
+- Run changepoint server ```roslaunch changepoint_detection changepoint_server.launch ```
 - Run detection examples for ActCHAMP ``` roscd changepoint/scripts && python actChamp_main.py ```
 - To run a specific example:
   - Microwave with grasp: ``` roscd changepoint/scripts && python actChamp_main.py  dataset 1 ```

@@ -291,5 +291,7 @@ if __name__ == '__main__':
             ax.set_yticklabels([])
             ax.set_zticklabels([])
             
-            plt.show()    
+            
+    if args.draw == 1:
+        plt.show()    
 

@@ -3,7 +3,7 @@ from distutils.extension import Extension
 from Cython.Build import cythonize
 import eigency
 
-model_name == "drawer"
+model_name = "drawer"
 
 if model_name == "drawer":
     PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"

@@ -20,7 +20,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
 
     ## Setup initial Values in the planner
-    sim = False
+    sim = True
     goal = np.array([20.]) ## Full Close
 
     if sim:

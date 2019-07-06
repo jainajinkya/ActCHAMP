@@ -20,11 +20,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
 
     ## Setup initial Values in the planner
-    sim = False
-    # goal = np.array([80., 0., 60., 0.])
-    # goal = np.array([72.1, -2.8, -19.7, 78.])
-    # goal = np.array([0.721, -0.028, -0.197, 0.78])
-    # goal = np.array([0.721, -0.028, 1.0, 0.78])
+    sim = True
     goal = np.array([0.85, 0.35, 0.45, 0.])*100.
 
     # goal = np.array([0.721, -0.028, -0.197, 2.57])

@@ -2,18 +2,15 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Build import cythonize
 import eigency
-import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--model', type=str, help='Build model for specific object' , default="microwave")
-args = parser.parse_args()
+model_name == "drawer"
 
-if args.model == "drawer":
+if model_name == "drawer":
     PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
     DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
     FILTER = "../src/filters/ukf.cpp"
 
-elif args.model == "stapler":
+elif model_name == "stapler":
     PROBLEM_FILENAME = "../src/problem_definitions/stapler.cpp"
     DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp" ## Drawer or Microwave
     FILTER = "../src/filters/kalman_filter.cpp"

@@ -141,6 +141,9 @@ if __name__ == '__main__':
         req.data = [DataPoint(x) for x in traj]
         req.model_type = 'changepoint_detection/ArticulationFitter'
 
+        print "##############################################"
+        print "Testing dataset: " + data_file - "example_data/"
+
         if args.dataset == 1:
             req.cp_params.len_mean = 200.0
             req.cp_params.len_sigma = 10. #5.0

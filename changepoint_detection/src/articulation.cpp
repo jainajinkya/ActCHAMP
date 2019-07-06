@@ -259,9 +259,9 @@ void ArticulationParams::fillParams(ModelSegment &seg)
     
 void ArticulationFitter::initialize(int model_id)
 {
-    // double sigma_position = 0.0075; // Microwave
+    double sigma_position = 0.0075; // Microwave
     // double sigma_position = 0.01; // Drawer
-    double sigma_position = 0.0055; // Stapler
+    // double sigma_position = 0.0055; // Stapler
     double sigma_orientation = M_PI/12.0;
     // double sigma_orientation = M_PI/6.0;
     double optimizer_iterations = 0;
@@ -293,7 +293,6 @@ void ArticulationFitter::initialize(int model_id)
     // double optimizer_iterations = 0;
     // double sac_iterations = 50;
     // double prior_outlier_ratio = log(0.01) / (- 0.05);
-
 
     /* Stapler Data*/
     // double sigma_position = 0.0055; 

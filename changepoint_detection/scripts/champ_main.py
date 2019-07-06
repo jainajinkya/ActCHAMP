@@ -144,21 +144,21 @@ if __name__ == '__main__':
         print "##############################################"
         print "Testing dataset: " + data_file - "example_data/"
 
-        if args.dataset == 1:
+        if i == 1:
             req.cp_params.len_mean = 200.0
             req.cp_params.len_sigma = 10. #5.0
             req.cp_params.min_seg_len = 50 #3
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
 
-        elif args.dataset == 2:
+        elif i == 2:
             req.cp_params.len_mean = 100.0
             req.cp_params.len_sigma = 10. #5.0
             req.cp_params.min_seg_len = 70 #3
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
        
-        elif args.dataset in [3,4]: 
+        elif i in [3,4]: 
             # ### Drawer
             req.cp_params.len_mean = 150.0
             req.cp_params.len_sigma = 10. #5.0
@@ -166,7 +166,7 @@ if __name__ == '__main__':
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
 
-        elif args.dataset == 5:
+        elif i == 5:
             ## stapler no marker
             req.cp_params.len_mean = 50.0
             req.cp_params.len_sigma = 10.0

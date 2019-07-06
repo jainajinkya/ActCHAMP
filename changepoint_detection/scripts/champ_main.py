@@ -104,8 +104,8 @@ def makeDetectRequest(req):
 if __name__ == '__main__':
     rospy.init_node('changepoint_detection_test')
     parser = argparse.ArgumentParser()
-    parser.add_argument('dataset', type=int, help='run specific dataset' , default=0)
-    parser.add_argument('draw', type=int, help='should plot or not' , default=1)
+    parser.add_argument('--dataset', type=int, help='run specific dataset' , default=0)
+    parser.add_argument('--draw', type=int, help='should plot or not' , default=1)
     args = parser.parse_args()
     
     #Load data - we want the relative difference between 2 object poses

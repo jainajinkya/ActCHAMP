@@ -145,10 +145,17 @@ if __name__ == '__main__':
         req.model_type = 'changepoint_detection/ArticulationFitter'
 
         # Microwave
-        if args.dataset in [1,2]:
-            req.cp_params.len_mean = 120.0
+        if args.dataset == 1:
+            req.cp_params.len_mean = 200.0
             req.cp_params.len_sigma = 10. #5.0
             req.cp_params.min_seg_len = 50 #3
+            req.cp_params.max_particles = 10
+            req.cp_params.resamp_particles = 10
+
+        elif args.dataset == 2:
+            req.cp_params.len_mean = 100.0
+            req.cp_params.len_sigma = 10. #5.0
+            req.cp_params.min_seg_len = 70 #3
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
         

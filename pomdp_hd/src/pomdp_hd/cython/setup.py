@@ -2,21 +2,42 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Build import cythonize
 import eigency
+import argparse
 
-# Compilation parameters
-PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
-# PROBLEM_FILENAME = "../src/problem_definitions/microwave_door.cpp"
-# PROBLEM_FILENAME="../src/problem_definitions/stapler.cpp"
+parser = argparse.ArgumentParser()
+parser.add_argument('--model', type=str, help='Build model for specific object' , default="microwave")
+args = parser.parse_args()
 
-# DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp"
-DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+if args.model == "drawer":
+    PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
+    DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+    FILTER = "../src/filters/ukf.cpp"
+
+elif args.model == "stapler":
+    PROBLEM_FILENAME = "../src/problem_definitions/stapler.cpp"
+    DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp" ## Drawer or Microwave
+    FILTER = "../src/filters/kalman_filter.cpp"
+
+else:
+    PROBLEM_FILENAME = "../src/problem_definitions/microwave_door.cpp"
+    DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+    FILTER = "../src/filters/ukf.cpp"
 
 
-# DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp" ## Micorwave or Stapler
-DYNAMICS_MODEL = "../src/dynamics_models/prismatic_pair.cpp"
+# # Compilation parameters
+# PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
+# # PROBLEM_FILENAME = "../src/problem_definitions/microwave_door.cpp"
+# # PROBLEM_FILENAME="../src/problem_definitions/stapler.cpp"
 
-# FILTER = "../src/filters/ukf.cpp"
-FILTER = "../src/filters/kalman_filter.cpp"
+# # DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp"
+# DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+
+
+# # DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp" ## Micorwave or Stapler
+# DYNAMICS_MODEL = "../src/dynamics_models/prismatic_pair.cpp"
+
+# # FILTER = "../src/filters/ukf.cpp"
+# FILTER = "../src/filters/kalman_filter.cpp"
 
 
 setup(

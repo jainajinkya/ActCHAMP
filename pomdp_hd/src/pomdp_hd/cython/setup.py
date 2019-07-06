@@ -4,19 +4,16 @@ from Cython.Build import cythonize
 import eigency
 
 # Compilation parameters
-# PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
-# 
-# "../src/problem_definitions/example_1_linear_dynamics.cpp"
-# "../src/problem_definitions/microwave_door.cpp"
-PROBLEM_FILENAME="../src/problem_definitions/stapler.cpp"
+PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
+# PROBLEM_FILENAME = "../src/problem_definitions/microwave_door.cpp"
+# PROBLEM_FILENAME="../src/problem_definitions/stapler.cpp"
 
-DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp"
-# "../src/dynamics_models/generic_kinematic_pair.cpp"
-# "../src/dynamics_models/linear_dynamics.cpp"
+# DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp"
+DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
 
-DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp"
-# "../src/dynamics_models/prismatic_pair.cpp"
-# "../src/dynamics_models/revolute_pair.cpp"
+
+# DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp" ## Micorwave or Stapler
+DYNAMICS_MODEL = "../src/dynamics_models/prismatic_pair.cpp"
 
 # FILTER = "../src/filters/ukf.cpp"
 FILTER = "../src/filters/kalman_filter.cpp"

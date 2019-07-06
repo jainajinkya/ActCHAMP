@@ -17,6 +17,7 @@ from itertools import product
 import cPickle as pickle
 import sys
 import copy
+import argparse
 
 
 def rotation_matrix(d):
@@ -102,27 +103,45 @@ def makeDetectRequest(req):
 
 if __name__ == '__main__':
     rospy.init_node('changepoint_detection_test')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('dataset', type=int, help='run specific dataset' , default=0)
+    parser.add_argument('draw', type=int, help='should plot or not' , default=1)
+    args = parser.parse_args()
     
     #Load data - we want the relative difference between 2 object poses
     #m1 and m2 are the trajectories of obj1 and obj2 alone
     #traj1 is obj1-obj2, traj2 is obj2-obj1.  Notice a significant difference. 
 
-    f_name = '../../experiments/data/pkl_files/' + str(sys.argv[1]) + '.pkl'
-    f = open(f_name, 'r')    
+    if args.dataset == 0:
+        datasets = [1,2,3,4,5]
+    else:
+        datasets = [args.dataset]
+
+    for i in datasets:
+        if i == 1:
+            data_file = "example_data/microwave_with_grasp"
+        elif i == 2:
+            data_file = "example_data/microwave_no_grasp"
+        elif i == 3:
+            data_file = "example_data/drawer_with_grasp"
+        elif i == 4:
+            data_file = "example_data/drawer_no_grasp"
+        else:
+            data_file = "example_data/stapler"
+
+    f_name = '../../experiments/data/pkl_files/' + data_file + '.pkl'
+    f = open(f_name, 'r')
     [traj, actions] = pickle.load(f)
 
-    t_name = "../../experiments/data/cp_data/"+str(sys.argv[1]) + "_champ.txt"
-    test_file = open(t_name, 'w')   
-        
-    draw = True
-    
+    t_name = "../../experiments/data/cp_data/"+ data_file + "_action.txt"
+    test_file = open(t_name, 'w')  
+            
     for i in range(1):
         req = DetectChangepointsRequest()
         req.data = [DataPoint(x) for x in traj]
         req.model_type = 'changepoint_detection/ArticulationFitter'
 
-        
-        if int(sys.argv[2]) == 1:
+        if args.dataset in [1,2]:
             ### Microwave
             req.cp_params.len_mean = 200.0
             req.cp_params.len_sigma = 10. #5.0
@@ -130,7 +149,7 @@ if __name__ == '__main__':
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
        
-        elif int(sys.argv[2]) == 2: 
+        elif args.dataset in [3,4]: 
             # ### Drawer
             req.cp_params.len_mean = 150.0
             req.cp_params.len_sigma = 10. #5.0
@@ -138,7 +157,7 @@ if __name__ == '__main__':
             req.cp_params.max_particles = 10
             req.cp_params.resamp_particles = 10
 
-        elif int(sys.argv[2]) == 3:
+        elif args.dataset == 5:
             ## stapler no marker
             req.cp_params.len_mean = 50.0
             req.cp_params.len_sigma = 10.0
@@ -182,24 +201,7 @@ if __name__ == '__main__':
                     model_evidences.append(seg.model_params[i])
 
 
-        test_file.write("\n=========================================\n\n\n")
-
-
-        # ## Data for test suite
-        # all_models = []
-
-        # for seg in resp.segments:
-        #     params_0 = {}
-        #     for i in xrange(len(seg.model_params)-2):
-        #         params_0[seg.param_names[i]] = seg.model_params[i]
-
-        #     data_0 = copy.copy({'params': params_0, 'log_likelihood': seg.model_params[-2], 'model_evidence': seg.model_params[-1]})
-        #     model_0 = copy.copy({'Model': seg.model_name, 'Start': seg.first_point, 'End': seg.last_point, 'Length': seg.last_point - seg.first_point + 1, 'Data': data_0})
-
-        #     all_models.append(model_0)
-
-
-        # pickle.dump(all_models, test_file)       
+        test_file.write("\n=========================================\n\n\n")      
     
     test_file.close()
     print "Wrote data for microwave without action test file."
@@ -207,7 +209,7 @@ if __name__ == '__main__':
 
     
     ########### Drawing code ###########
-    if draw:
+    if args.draw == 1:
         X = np.array([traj[i][0] for i in xrange(len(traj))])
         Y = np.array([traj[i][1] for i in xrange(len(traj))])
         Z = np.array([traj[i][2] for i in xrange(len(traj))])

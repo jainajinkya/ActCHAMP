@@ -4,9 +4,13 @@ Package to use the ActCHAMP algorithm for data collection, changepoint analysis,
 ## Run Examples
 ### Changepoint Detection
 - Run changepoint server ```roslaunch changepoint_detection changepoint_detection_server.launch ```
-- Microwave: ``` roscd changepoint/scripts && python actChamp_main.py example_data/microwave_with_grasp 1 ```
-- Drawer: ``` roscd changepoint/scripts && python actChamp_main.py example_data/drawer_with_grasp 2 ```
-- Stapler: ``` roscd changepoint/scripts && python actChamp_main.py example_data/stapler 3 ```
+- Run detection examples for ActCHAMP ``` roscd changepoint/scripts && python actChamp_main.py ```
+- To run a specific example:
+  - Microwave with grasp: ``` roscd changepoint/scripts && python actChamp_main.py  dataset 1 ```
+  - Microwave without grasp: ``` roscd changepoint/scripts && python actChamp_main.py dataset 2```
+  - Drawer with grasp: ``` roscd changepoint/scripts && python actChamp_main.py dataset 3 ```
+  - Drawer without grasp: ``` roscd changepoint/scripts && python actChamp_main.py dataset 4 ```
+  - Stapler: ``` roscd changepoint/scripts && python actChamp_main.py dataset 5 ```
 
 ### Manipulation Planning
 - Compile cython bindings

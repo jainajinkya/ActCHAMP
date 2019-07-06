@@ -8,16 +8,19 @@ model_name = "drawer"
 if model_name == "drawer":
     PROBLEM_FILENAME = "../src/problem_definitions/drawer.cpp"
     DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+    DYNAMICS_MODEL = "../src/dynamics_models/prismatic_pair.cpp"
     FILTER = "../src/filters/ukf.cpp"
 
 elif model_name == "stapler":
     PROBLEM_FILENAME = "../src/problem_definitions/stapler.cpp"
     DYNAMICS = "../src/dynamics_models/stapler/stapler_dynamics.cpp" ## Drawer or Microwave
+    DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp" ## Micorwave or Stapler
     FILTER = "../src/filters/kalman_filter.cpp"
 
 else:
     PROBLEM_FILENAME = "../src/problem_definitions/microwave_door.cpp"
     DYNAMICS = "../src/dynamics_models/generic_kinematic_pair.cpp" ## Drawer or Microwave
+    DYNAMICS_MODEL = "../src/dynamics_models/revolute_pair.cpp" ## Micorwave or Stapler
     FILTER = "../src/filters/ukf.cpp"
 
 

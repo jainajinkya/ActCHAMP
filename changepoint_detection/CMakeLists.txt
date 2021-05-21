@@ -108,13 +108,26 @@ add_dependencies(test_articulation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_
 add_executable(test_visualization test/test_cp_visual.cpp )
 target_link_libraries(test_visualization ArticulationFitter ${catkin_LIBRARIES})
 
-## Installing Headers to be used by other packages
-install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  PATTERN ".svn" EXCLUDE)
 
-# install(TARGETS ArticulationFitter
+## Installing Headers to be used by other packages
+#install(DIRECTORY include/${PROJECT_NAME}/
+#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#  PATTERN ".svn" EXCLUDE)
+#
+#install(TARGETS ArticulationFitter
 #         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #         RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
-#         PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+#         PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+#         )
+#
+#install(TARGETS changepoint_detection_server changepoint_detection_server
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  )
+#
+#install(DIRECTORY launch
+#    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#    )
+

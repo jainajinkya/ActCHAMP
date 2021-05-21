@@ -17,3 +17,4 @@ string name                          # name of the model family (e.g. "rotationa
 articulation_msgs/ParamMsg[] params  # model parameters
 articulation_msgs/TrackMsg track     # trajectory from which the model is estimated, or
                                      # that is evaluated using the model
+

@@ -41,6 +41,5 @@ uint32 POSE_END_OF_SEGMENT=2
 # Each channel should have the same number of elements as pose array, 
 # and the data in each channel should correspond 1:1 with each pose
 # possible channels: "width", "height", "rgb", ...
-sensor_msgs/ChannelFloat32[] channels       
-
+sensor_msgs/ChannelFloat32[] channels
 

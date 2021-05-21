@@ -42,10 +42,10 @@
   <run_depend>visualization_msgs</run_depend>
   <!-- <run_depend>articulation_models</run_depend> -->
   
-  <export>
+  <!--export>
     <changepoint_detection plugin="${prefix}/default_cp_plugin.xml" 
     />
-  </export>
+  </export-->
 
   
 </package>
